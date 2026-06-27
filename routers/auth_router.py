@@ -1,10 +1,18 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+from services.auth_service import (
+    register_user,
+    login_user,
+    get_all_users,
+    get_all_login_logs,
+    update_user
+)
 
 from database.connection import get_db
 
 from schemas.user_schema import UserCreate, UserResponse
 from schemas.login_schema import LoginRequest, LoginLogResponse
+from schemas.user_schema import UserCreate, UserResponse, UserUpdate
 
 from services.auth_service import (
     register_user,
@@ -34,3 +42,11 @@ def users(db: Session = Depends(get_db)):
 @router.get("/login-logs", response_model=list[LoginLogResponse])
 def login_logs(db: Session = Depends(get_db)):
     return get_all_login_logs(db)
+
+@router.put("/update/{user_id}")
+def update(
+    user_id: int,
+    user_data: UserUpdate,
+    db: Session = Depends(get_db)
+):
+    return update_user(user_id, user_data, db)
