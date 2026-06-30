@@ -250,7 +250,7 @@ Passwords are securely hashed using **Passlib** with **bcrypt** before being sto
 **Shaik Khaja Mainuddin**
 
 - GitHub: https://github.com/Mainuddin123
-- LinkedIn: https://www.linkedin.com/in/shaik-khajamainuddin/
+- LinkedIn:https://www.linkedin.com/in/khaja-mainuddin-sk-958436348?utm_source=share_via&utm_content=profile&utm_medium=member_android
 
 ---
 
